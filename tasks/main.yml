@@ -10,5 +10,5 @@
   command: subscription-manager repos --disable "*"
 
 - name: enable rhel server repo
-  command: subscription-manager repos "{{ repos }}"
+  command: subscription-manager repos --enable "{{ repos }}"
 
