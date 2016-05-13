@@ -18,6 +18,7 @@ Role Variables
 rh_username
 rh_password
 rh_poolid
+repos
 
 
 Dependencies
@@ -27,13 +28,13 @@ None
 
 Example Playbook
 ----------------
-- name: Register to RHN
-  hosts: webserver
-  remote_user: cloud-user
-  become: yes
-  become_method: sudo
-  roles:
-     - { role: donnydavis.rh-subscription-manager, rh_username: getyourown, rh_password: nottelling,  rh_poolid: randomstringofnumbersfromredhat, repos: --enable rhel-7-server-rpms }
+  - name: Register to RHN
+    hosts: webserver
+    remote_user: cloud-user
+    become: yes
+    become_method: sudo
+    roles:
+      - { role: donnydavis.rh-subscription-manager, rh_username: getyourown, rh_password: nottelling,  rh_poolid: randomstringofnumbersfromredhat, repos: --enable rhel-7-server-rpms }
 
 
 
