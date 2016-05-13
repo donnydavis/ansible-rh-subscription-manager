@@ -27,7 +27,7 @@ None
 
 Example Playbook
 ----------------
-    - name: Register to RHN
+- name: Register to RHN
   hosts: webserver
   remote_user: cloud-user
   become: yes
