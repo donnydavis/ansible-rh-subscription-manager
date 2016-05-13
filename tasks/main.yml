@@ -1,0 +1,14 @@
+---
+- name: register the server
+  command: subscription-manager register --username "{{ rh_username }}" --password "{{ rh_password }}" --force
+
+- name: attach to pool
+  command: subscription-manager attach --pool="{{ rh_poolid }}"
+  register: register_result
+
+- name: disable all repos
+  command: subscription-manager repos --disable "*"
+
+- name: enable rhel server repo
+  command: subscription-manager repos {{ repos }}
+
